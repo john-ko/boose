@@ -20,18 +20,16 @@ hello friend from oclif! (./src/commands/hello/index.ts)
     const { alias, cmd } = args
 
     writeAliasToFile(alias, cmd)
-
-    this.log(`Created alias ${alias} for command ${cmd}! (./src/commands/alias/index.ts)`)
   }
 }
 
 function writeAliasToFile(alias: string, cmd: string): void {
   const homeDirectory = os.homedir()
   const filePath = path.join(homeDirectory, '.aliases')
-  const aliasFile = fs.appendFileSync(filePath, `alias ${alias}="${cmd}"\n`, {
+  fs.appendFileSync(filePath, `alias ${alias}="${cmd}"\n`, {
     encoding: 'utf8',
     flag: 'a+',
   })
 
-  console.log(aliasFile)
+  console.log(`Created alias ${alias} for: ${cmd}`)
 }    
