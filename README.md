@@ -1,6 +1,14 @@
 boose
 =================
 
+```bash
+touch ~/.aliases
+echo "#aliases" >> ~/.zshrc
+echo "source $HOME/.aliases" >> ~/.zshrc
+echo "alias boose=\"$(pwd)/bin/run.js\"" >> ~/.zshrc
+```
+
+
 A new CLI generated with oclif
 
 
